@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% block title %}{{page}}
+
+{% endblock %}
+
+
+
+{% block content %}
+
+
+<section id="product_carousel">
+
+    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active carousel">
+                <img src="\static\images\Chicken-Biryani-Recipe_DbTuUc6.jpg"
+                    class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item carousel">
+                <img src="\static\images\Jhalmuri_aNmCeSl.jpg"
+                    class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item carousel">
+                <img src="\static\images\Jhalmuri_l8rH59s.jpg"
+                    class="d-block w-100" alt="...">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+</section>
+
+<section id="product_display">
+    <div class="container">
+        <div class="row ">
+            {% for recipe in recipes %}
+            <div class="col-3 product_display">
+                <div class="card product_card">
+                    <img src="/{{recipe.recipe_image}}" class="card-img-top" alt="...">
+                    <div class="card-body product_card">
+                        <h5 class="card-title">{{recipe.recipe_name}}</h5>
+                        <details>
+                            <summary>Recipe Details:</summary>
+                            <p class="card-text"> {{recipe.recipe_desc}}</p>
+                          </details>
+                   
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+    </div>
+</section>
+
+
+{% endblock %}

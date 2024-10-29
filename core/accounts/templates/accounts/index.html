@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% block title %}{{page}}{% endblock %}
+{% block content %}
+<section>
+    <div class="container mt-5">
+        <form class="col-6 mx-auto card p-3 shadow-lg" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <h2>Register</h2>
+            <hr>
+
+            {% if messages %}
+            {{ message.tags }}
+            <div class="alert alert-primary" role="alert">
+                {% for message in messages %}
+                {{ message }}
+                {% endfor %}
+            </div>
+            {% endif %}
+
+            <div class="mb-3">
+                <label for="first_name">First Name</label>
+                <input type="text" class="form-control" id="first_name" name="first_name" aria-describedby="emailHelp"
+                    placeholder="Enter first name" required>
+            </div>
+            <div class="mb-3">
+                <label for="last_name">Last Name</label>
+                <input type="text" class="form-control" id="last_name" name="last_name" aria-describedby="emailHelp"
+                    placeholder="Enter last name" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="username">Username</label>
+                <input type="text" class="form-control" id="username" name="username" aria-describedby="emailHelp"
+                    placeholder="Enter Username" required>
+            </div>
+            <div class="mb-3">
+                <label for="user_password">Password</label>
+                <input type="password" class="form-control" id="user_password" name="user_password"
+                    placeholder="Password" required>
+            </div>
+            <p> Already have account <a href="/login_page/">Login</a></p>
+            <button type="submit" class="btn btn-primary">Submit</button>
+
+        </form>
+    </div>
+</section>
+
+{% endblock %}

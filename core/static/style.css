@@ -1,0 +1,44 @@
+.carousel{
+  height: 200px;
+}
+
+#product_display {
+  margin-top: 20px;
+  align-items: center;
+}
+#product_display img{
+  width: 300px !important; 
+  height: 200px !important;  
+}
+
+.product_display{
+  text-align: center;
+  margin-bottom: 20px !important;
+
+}
+
+.product_card {
+
+  align-items: center; 
+}
+
+#recipe_display{
+  margin-top: 20px;
+  align-items: center;
+  
+}
+#recipe_display img{
+  width: 300px !important; 
+  height: 200px !important; 
+}
+
+.recipe_display{
+  text-align: center;
+
+}
+
+.recipe_card {
+
+
+  align-items: center;
+}
